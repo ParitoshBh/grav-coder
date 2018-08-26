@@ -1,0 +1,48 @@
+{% extends 'partials/base.html.twig' %}
+{% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
+
+{% block body %}
+<section class="container post">
+    <article>
+        <header class="page-header">
+            <div class="page-title">
+                <h1 class="title">{{ page.title }}</h1>
+            </div>
+            <div class="page-meta">
+                <span class="posted-on">
+                    <i class="far fa-calendar"></i>
+                    <time datetime='{{ page.date|date("c") }}'>
+                        {{ page.date|date(system.pages.dateformat.short) }}
+                    </time>
+                </span>
+            </div>
+        </header>
+
+        <div class="page-content">
+            {{ page.content }}
+        </div>
+
+        <footer class="page-footer">
+            <!--{% if page.taxonomy.tag %}
+                <div class="tags">
+                    <i class="fas fa-tag"></i>
+                    {% for tag in page.taxonomy.tag %}
+                        <a href="{{ blog.url|rtrim('/') }}/categories/{{ tag }}">{{ tag }},</a>
+                    {% endfor %}
+                </div>
+            {% endif %}-->
+            {% if page.taxonomy.category %}
+                <div class="categories">
+                    <i class="fas fa-folder"></i>
+                    {% for category in page.taxonomy.category %}
+                        <!--<a href="{{ blog.url|rtrim('/') }}/categories/{{ category }}">{{ category }}</a>-->
+                        <a href="#">{{ category }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </footer>
+
+    </article>
+</section>
+
+{% endblock %}

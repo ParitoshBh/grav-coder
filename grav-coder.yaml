@@ -1,0 +1,7 @@
+enabled: true
+dropdown:
+  enabled: true
+navbar:
+  title: Grav Coder
+footer:
+  copyright: Grav Coder

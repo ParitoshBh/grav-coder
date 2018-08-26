@@ -1,0 +1,76 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'partials/metadata.html.twig' %}
+
+    <base href="{{ page.url(true, true) }}">
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <link rel="canonical" href="{{ page.url(true, true) }}">
+
+    {% block stylesheets %}
+        {% do assets.addCss('https://fonts.googleapis.com/css?family=Fira+Mono:400,700', 100) %}
+        {% do assets.addCss('//cdn.rawgit.com/necolas/normalize.css/master/normalize.css', 99) %}
+        {% do assets.addCss('theme://css/bootstrap.min.css', 98) %}
+        {% do assets.addCss('https://use.fontawesome.com/releases/v5.2.0/css/all.css', 97) %}
+        {% do assets.addCss('theme://css/style.min.css?v=8', 96) %}
+        {% do assets.addCss('theme://css/main.min.css?v=8', 95) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon-16x16.png') }}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon-32x32.png') }}" sizes="32x32">
+  </head>
+
+  <body class="">
+    <main class="wrapper">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+        <section class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed float-right" data-toggle="collapse" data-target="#navbar-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand float-left" href="{{ home_url }}">
+              {{ theme_config.navbar.title }}
+            </a>
+          </div>
+          {% block header_navigation %}
+            <div class="collapse navbar-collapse" id="navbar-menu">
+              {% include 'partials/navigation.html.twig' %}
+            </div>
+          {% endblock %}
+        </section>
+      </nav>
+
+      <div class="content">
+        {% block body %}
+          <section class="container centered">
+            {% block content %}{% endblock %}
+          </section>
+        {% endblock %}
+      </div>
+
+      {% block footer %}
+        <footer class="footer">
+          {% include 'partials/footer.html.twig' %}
+        </footer>
+      {% endblock %}
+
+    </main>
+
+    {% block javascripts %}
+        {% do assets.addJs('theme://js/jquery-slim.min.js', 100) %}
+        {% do assets.addJs('theme://js/bootstrap.min.js', 99) %}
+        {% do assets.addJs('theme://js/main.min.js', 98) %}
+    {% endblock %}
+    {{ assets.js() }}
+    
+  </body>
+</html>

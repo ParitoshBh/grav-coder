@@ -1,0 +1,21 @@
+<section class="container centered">
+  <div class="about">
+    <ul>
+      {% for type, meta in theme_config.social %}
+        <li>          
+          <a href="{{ meta.url }}" title="{{ meta.title }}">
+            <i class="fab {{ meta.icon }}"></i>
+          </a>
+          {% if loop.last == false %}
+            <span class="separator">•</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<section class="container">
+  <span class="copyright">
+    © 2018 <a href="{{ home_url }}">{{ theme_config.footer.copyright }}</a>
+  </span>
+</section>

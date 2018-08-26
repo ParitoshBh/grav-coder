@@ -1,0 +1,10 @@
+<ul class="nav navbar-nav navbar-right ">
+    {% for page in pages.children.visible %}
+        <li>
+            <a href="{{ page.url }}">
+                {{ page.menu }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
