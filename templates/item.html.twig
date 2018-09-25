@@ -22,25 +22,30 @@
             {{ page.content }}
         </div>
 
-        <footer class="page-footer">
-            <!--{% if page.taxonomy.tag %}
-                <div class="tags">
-                    <i class="fas fa-tag"></i>
-                    {% for tag in page.taxonomy.tag %}
-                        <a href="{{ blog.url|rtrim('/') }}/categories/{{ tag }}">{{ tag }},</a>
-                    {% endfor %}
+        <br/>
+        {% if page.taxonomy.category %}
+            <div class="categories">
+                <i class="fas fa-folder"></i>
+                {% for category in page.taxonomy.category %}
+                    <!--<a href="{{ blog.url|rtrim('/') }}/categories/{{ category }}">{{ category }}</a>-->
+                    <a href="#">{{ category }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {# Show navigation if enabled, defaults to true #}
+        {% if theme_config.post.navigation %}
+            <footer class="page-footer">
+                <div>
+                    {% if not page.isLast %}
+                        <div class="float-left"><i class="far fa-hand-point-left"></i> <a href="{{ page.prevSibling.url }}">Previous Article</a></div>
+                    {% endif %}
+                    {% if not page.isFirst %}
+                        <div class="float-right"><a href="{{ page.nextSibling.url }}">Next Article</a> <i class="far fa-hand-point-right"></i></div>
+                    {% endif %}
                 </div>
-            {% endif %}-->
-            {% if page.taxonomy.category %}
-                <div class="categories">
-                    <i class="fas fa-folder"></i>
-                    {% for category in page.taxonomy.category %}
-                        <!--<a href="{{ blog.url|rtrim('/') }}/categories/{{ category }}">{{ category }}</a>-->
-                        <a href="#">{{ category }}</a>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </footer>
+            </footer>
+        {% endif %}
 
     </article>
 </section>

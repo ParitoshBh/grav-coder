@@ -5,3 +5,5 @@ navbar:
   title: Grav Coder
 footer:
   copyright: Grav Coder
+post:
+  navigation: true
