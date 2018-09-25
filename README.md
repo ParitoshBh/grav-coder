@@ -100,6 +100,10 @@ There are certain sections of the theme you can customize, in order to do so,
       title: StackOverflow
       url: <url>
       icon: fa-stack-overflow
+
+  # Navigation links (prev/next) on post page (enabled by default)
+  post:
+    navigation: false
   ``` 
 
 A couple of pointers for social media icons, 
