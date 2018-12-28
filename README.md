@@ -14,15 +14,15 @@ The simplest way to install this theme is via the [Grav Package Manager (GPM)](h
 
     bin/gpm install grav-coder
 
-This will install the Grav Coder theme into your `/user/themes` directory within Grav. Its files can be found under `/your/site/grav/user/themes/grav-coder`.
+This will install the Grav Coder theme into your `/user/themes` directory within Grav. Its files can be found under `/yoursite/user/themes/grav-coder`.
 
 ### Manual Installation
 
-To install this theme, just download the zip version of this repository and unzip it under `/your/site/grav/user/themes`. Then, rename the folder to `grav-coder`. You can find these files either on [GitHub](https://github.com/ParitoshBh/grav-coder) or via [GetGrav.org](http://getgrav.org/downloads/themes).
+To install this theme, just download the zip version of this repository and unzip it under `/yoursite/user/themes`. Then, rename the folder to `grav-coder`. You can find these files either on [GitHub](https://github.com/ParitoshBh/grav-coder) or via [GetGrav.org](http://getgrav.org/downloads/themes).
 
 You should now have all the theme files under
 
-    /your/site/grav/user/themes/grav-coder
+    /yoursite/user/themes/grav-coder
 
 # Updating
 
@@ -40,9 +40,9 @@ This command will check your Grav install to see if your Grav Coder theme is due
 
 Manually updating Grav Coder is pretty simple. Here is what you will need to do to get this done:
 
-* Delete the `your/site/user/themes/grav-coder` directory.
+* Delete the `yoursite/user/themes/grav-coder` directory.
 * Download the new version of the Grav Coder theme from either [GitHub](https://github.com/ParitoshBh/grav-coder) or [GetGrav.org](http://getgrav.org/downloads/themes#extras).
-* Unzip the zip file in `your/site/user/themes` and rename the resulting folder to `grav-coder`.
+* Unzip the zip file in `yoursite/user/themes` and rename the resulting folder to `grav-coder`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in terminal and typing `bin/grav clear-cache`.
 
 > Note: Any changes you have made to any of the files listed under this directory will also be removed and replaced by the new set. Any files located elsewhere (for example a YAML settings file placed in `user/config/themes`) will remain intact.
@@ -59,19 +59,57 @@ Manually updating Grav Coder is pretty simple. Here is what you will need to do 
 
 If you want to set Grav Coder as the default theme, you can do so by following these steps:
 
-* Navigate to `/your/site/grav/user/config`.
+* Navigate to `/yoursite/user/config`.
 * Open the **system.yaml** file.
-* Change the `theme:` setting to `theme: grav-coder`.
+* Change the `theme:` setting to `grav-coder`.
 * Save your changes.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
+
+### Homepage Setup
+
+* Navigate to `/yoursite/user/pages`.
+* Create `home` directory (remove/rename/backup existing `home` directory, if any)
+* Under `home` directory, create `default.md` and put in html content you'd like to see on homepage. Example,
+   ```html
+    <div class="about">
+      <h1>Grav Coder</h1>
+      <h2>An Open Source Theme For Grav CMS</h2>
+    </div>
+   ```
+
+### Blog (Listing) Setup
+
+* Navigate to `/yoursite/user/pages`.
+* Create `01.blog` directory
+* Under `01.blog` directory, create `blog.md` with following content,
+   ```md
+    ---
+    content:
+        items: '@self.children'
+        order:
+            by: date
+            dir: desc
+        limit: 10
+        pagination: true
+    metadata:
+      description: 'Some description for metadata'
+    ---
+   ```
+* Each blog post would then be a directory under `01.blog` directory. Example, `01.blog/sample-article` directory will have `item.md` in it with contents of the post.
+
+### Navigation Bar Menu Items
+
+For creating additional menu items (apart from `Home`) in nav bar simply create a directory under `user/pages/` eg. `03.Portfolio` (don't forget to increment the numeric value). As of now you can create 2 different types of pages,
+1. Containing HTML content - Under `02.portfolio` directory create `default.md` (with html content in it)
+1. Listing page (similar to a `blog` page) - Structure is similar to `blog`
 
 Once this is done, you should be able to see the new theme on the frontend.
 
 # Customizations
 
 There are certain sections of the theme you can customize, in order to do so,
-* Create `themes` directory under `/your/site/grav/user/config` (skip this step if it already exists)
-* Create `grav-coder.yaml` file under `/your/site/grav/user/config/themes` (this makes sure any configurations made to theme persist when updating the theme)
+* Create `themes` directory under `/yoursite/user/config` (skip this step if it already exists)
+* Create `grav-coder.yaml` file under `/yoursite/user/config/themes` (this makes sure any configurations made to theme persist when updating the theme)
 * Within `grav-coder.yaml` file following configuration are available,
   ```
   # Title in navigation bar
