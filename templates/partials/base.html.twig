@@ -37,7 +37,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand float-left" href="{{ home_url }}">
+            <a href="{{ home_url }}" class="navbar-brand">
+            {% if logo %}
+              {% set logo_file = (logo|first).name %}
+              <img src="{{ url('theme://images/logo/' ~ logo_file)  }}" alt="{{ site.name }}" />
+            {% else %}
+              <img class="img-responsive" width="50" height="50" src="{{ url('theme://images/test.jpg') }}" alt="{{ site.name }}" />
+            {% endif %}
+            </a>
+            <a class="navbar-text float-left" href="{{ home_url }}">
               {{ theme_config.navbar.title }}
             </a>
           </div>
