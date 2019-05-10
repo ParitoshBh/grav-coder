@@ -16,6 +16,10 @@
 </section>
 <section class="container">
   <span class="copyright">
-    © 2018 <a href="{{ home_url }}">{{ theme_config.footer.copyright }}</a>
+    ©
+    {% if theme_config.footer.copyright_start_year %}
+      {{ theme_config.footer.copyright_start_year }} -
+    {% endif %}
+    {{ "now"|date("Y") }} <a href="{{ home_url }}">{{ theme_config.footer.copyright }}</a>
   </span>
 </section>
