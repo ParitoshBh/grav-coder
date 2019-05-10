@@ -1,17 +1,20 @@
 {% extends 'partials/base.html.twig' %}
 {% set collection = page.collection() %}
 {% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
+{% if uri.param('category') %}
+	{% set page_title = "Category: " ~ uri.param('category') %}
+{% else %}
+	{% set page_title = "Posts" %}
+{% endif %}
+
+{% block title %}{{ page_title }} | {{ parent()  }}{% endblock %}
 
 {% block body %}
 
 	<section class="container list">
 		<div class="page-header">
 			<div class="page-title">
-				{% if uri.param('category') %}
-					<h1>Category: {{ uri.param('category') }}</h1>
-				{% else %}
-					<h1>Posts</h1>
-				{% endif %}
+				<h1>{{ page_title }}</h1>
 			</div>
 		</div>
 		<div class="page-content">

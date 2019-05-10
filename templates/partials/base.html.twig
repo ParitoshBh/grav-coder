@@ -8,7 +8,7 @@
     {% include 'partials/metadata.html.twig' %}
 
     <base href="{{ page.url(true, true) }}">
-    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    <title>{% block title %}{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}{% endblock %}</title>
 
     <link rel="canonical" href="{{ page.url(true, true) }}">
 
