@@ -54,6 +54,7 @@ Manually updating Grav Coder is pretty simple. Here is what you will need to do 
 * Default view template
 * Blog view template
 * Blog item view template
+* Categories view (listing)
 
 # Setup
 
@@ -116,9 +117,11 @@ There are certain sections of the theme you can customize, in order to do so,
   navbar:
     title: Grav Coder
 
-  # Copyright text visible in footer
+  # Copyright text visible in footer and (start) year
+  # If 'copyright_start_year' is not defined then it isn't shown
   footer:
     copyright: Grav Coder
+    copyright_start_year: 2018
 
   # Social media icons, displayed in footer, above copyright text
   social:

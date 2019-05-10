@@ -27,8 +27,7 @@
             <div class="categories">
                 <i class="fas fa-folder"></i>
                 {% for category in page.taxonomy.category %}
-                    <!--<a href="{{ blog.url|rtrim('/') }}/categories/{{ category }}">{{ category }}</a>-->
-                    <a href="#">{{ category }}</a>
+                    <a href="{{ site.blog.route }}/category:{{ category }}">{{ category }}</a>
                 {% endfor %}
             </div>
         {% endif %}

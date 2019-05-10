@@ -7,7 +7,11 @@
 	<section class="container list">
 		<div class="page-header">
 			<div class="page-title">
-				<h1>Posts</h1>
+				{% if uri.param('category') %}
+					<h1>Category: {{ uri.param('category') }}</h1>
+				{% else %}
+					<h1>Posts</h1>
+				{% endif %}
 			</div>
 		</div>
 		<div class="page-content">
