@@ -7,3 +7,5 @@ footer:
   copyright: Grav Coder
 post:
   navigation: true
+pagination:
+  count: 10

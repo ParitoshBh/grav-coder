@@ -1,6 +1,5 @@
 {% extends 'partials/base.html.twig' %}
-{% set collection = page.collection() %}
-{% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
+
 {% if uri.param('category') %}
 	{% set page_title = "Category: " ~ uri.param('category') %}
 {% else %}
@@ -11,17 +10,51 @@
 
 {% block body %}
 
+{# Variables for pagination #}
+{% set collection = page.collection({
+    'items': '@self.children', 
+    'pagination': true, 
+    'order': {'by': 'date', 'dir': 'desc'}, 
+    'limit': theme_config.pagination.count})
+%}
+{% set itemsInCollection = page.collection({'items': collection.params.items})|length %}
+{% set currentPage = uri.param('page')|default('1') %}
+{% set itemsPerPage = collection.params.limit %}
+{% set pagesInCollection = (itemsInCollection / itemsPerPage)|round(0, 'ceil') %}
+
 	<section class="container list">
+
+		{# Header #}
 		<div class="page-header">
 			<div class="page-title">
 				<h1>{{ page_title }}</h1>
 			</div>
 		</div>
+
+		{# Listing #}
 		<div class="page-content">
 			{% for child in collection %}
 			    {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child} %}
 			{% endfor %}      
 		</div>
+
+		{# Pagination #}
+		{% if itemsInCollection > itemsPerPage %}
+			<div>
+				{% if currentPage != '1' %}
+					<div class="float-left">
+						<i class="far fa-hand-point-left"></i> <a href="{{ page.url ~ '/page' ~ system.param_sep ~ (currentPage - 1) }}">Newer</a>
+					</div>
+				{% endif %}
+				{% if (currentPage + 1) <= pagesInCollection %}
+					<div class="float-right">
+						<a href="{{ page.url ~ '/page' ~ system.param_sep ~ (currentPage + 1) }}">Older</a> 
+						<i class="far fa-hand-point-right"></i>
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+
 	</section>
 
 {% endblock %}
