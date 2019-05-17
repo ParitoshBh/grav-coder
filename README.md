@@ -55,6 +55,7 @@ Manually updating Grav Coder is pretty simple. Here is what you will need to do 
 * Blog view template
 * Blog item view template
 * Categories view (listing)
+* Pagination support (defaults to 10 items per page)
 
 # Setup
 
@@ -145,6 +146,10 @@ There are certain sections of the theme you can customize, in order to do so,
   # Navigation links (prev/next) on post page (enabled by default)
   post:
     navigation: false
+
+  # Pagination - number of items to show per page
+  pagination:
+    count: 10
   ``` 
 
 A couple of pointers for social media icons, 
