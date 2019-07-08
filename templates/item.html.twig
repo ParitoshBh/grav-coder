@@ -27,7 +27,7 @@
             <div class="categories">
                 <i class="fas fa-folder"></i>
                 {% for category in page.taxonomy.category %}
-                    <a href="{{ site.blog.route }}/category:{{ category }}">{{ category }}</a>
+                   <a href="{{ site.blog.route }}/category:{{ category }}">{{ category }}</a>{% if not loop.last %},{% endif %}
                 {% endfor %}
             </div>
         {% endif %}
