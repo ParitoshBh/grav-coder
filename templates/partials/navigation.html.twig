@@ -1,7 +1,8 @@
 <ul class="nav navbar-nav navbar-right ">
     {% for page in pages.children.visible %}
+    {% set active_page = (page.active or page.activeChild) ? 'active' : '' %}
         <li>
-            <a href="{{ page.url }}">
+            <a href="{{ page.url }}" class="{{ active_page }}">
                 {{ page.menu }}
             </a>
         </li>
