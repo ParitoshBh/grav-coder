@@ -1,5 +1,7 @@
 # Grav Coder
 
+[![buddy pipeline](https://app.buddy.works/paritoshbh/grav-demo/pipelines/pipeline/197829/badge.svg?token=1a6eeec7e9ee8474f8c1dfcfe952a7b1af37740c0173678dc40cdec95155e60d "buddy pipeline")](https://app.buddy.works/paritoshbh/grav-demo/pipelines/pipeline/197829)
+
 Grav Coder is a fork of [Hugo Coder](https://github.com/luizdepra/hugo-coder) and derived from customizations made to it by [Khosrow Moossavi](https://github.com/khos2ow) for his own personal website.
 
 ![Grav Coder](assets/screenshot.png)
@@ -111,6 +113,7 @@ Once this is done, you should be able to see the new theme on the frontend.
 
 There are certain sections of the theme you can customize, in order to do so,
 * Create `themes` directory under `/yoursite/user/config` (skip this step if it already exists)
+* Overwrite or extend styles inside `custom.css` under `/yoursite/user/themes/yourtheme/css`
 * Create `grav-coder.yaml` file under `/yoursite/user/config/themes` (this makes sure any configurations made to theme persist when updating the theme)
 * Within `grav-coder.yaml` file following configuration are available,
   ```
