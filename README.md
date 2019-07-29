@@ -113,6 +113,7 @@ Once this is done, you should be able to see the new theme on the frontend.
 
 There are certain sections of the theme you can customize, in order to do so,
 * Create `themes` directory under `/yoursite/user/config` (skip this step if it already exists)
+* Overwrite or extend styles inside `custom.css` under `/yoursite/user/themes/yourtheme/css`
 * Create `grav-coder.yaml` file under `/yoursite/user/config/themes` (this makes sure any configurations made to theme persist when updating the theme)
 * Within `grav-coder.yaml` file following configuration are available,
   ```
