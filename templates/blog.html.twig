@@ -1,9 +1,9 @@
 {% extends 'partials/base.html.twig' %}
 
 {% if uri.param('category') %}
-	{% set page_title = "Category: " ~ uri.param('category') %}
+{% elseif uri.param('tag') %}
+	{% set page_title = "Tag: " ~ uri.param('tag') %}
 {% else %}
-	{% set page_title = "Posts" %}
 {% endif %}
 
 {% block title %}{{ page_title }} | {{ parent()  }}{% endblock %}

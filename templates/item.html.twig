@@ -22,6 +22,8 @@
             {{ page.content }}
         </div>
 
+        {# Display taxonomy details #}
+        {% if grav.theme.config.post.taxonomy %}
         <br/>
         {% if page.taxonomy.category %}
             <div class="categories">
@@ -32,8 +34,18 @@
             </div>
         {% endif %}
 
+        {% if page.taxonomy.tag %}
+            <div class="tags">
+                <i class="fas fa-hashtag"></i>
+                {% for tag in page.taxonomy.tag %}
+                   <a href="{{ site.blog.route }}/tag:{{ tag }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% endif %}
+
         {# Show navigation if enabled, defaults to true #}
-        {% if theme_config.post.navigation %}
+        {% if grav.theme.config.post.navigation %}
             <footer class="page-footer">
                 <div>
                     {% if not page.isLast %}
