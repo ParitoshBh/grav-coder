@@ -1,10 +1,11 @@
 # v0.1.4
-## 07/26/2019
+## 08/22/2019
 
-1. [](#bugfix)
-    * Comma separated categories (on blog entry page). Fixes [#11](https://github.com/ParitoshBh/grav-coder/issues/11)
 1. [](#new)
     * Highlight selected page in navbar. Thanks [@samuelstein](https://github.com/samuelstein)
+    * Overwrite or extend styles using `custom.css`. Thanks [@samuelstein](https://github.com/samuelstein)
+1. [](#bugfix)
+    * Comma separated categories (on blog entry page). Fixes [#11](https://github.com/ParitoshBh/grav-coder/issues/11)
 
 # v0.1.3
 ## 05/16/2019
