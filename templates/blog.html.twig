@@ -43,7 +43,7 @@
 			<div>
 				{% if currentPage != '1' %}
 					<div class="float-left">
-						<i class="far fa-hand-point-left"></i> <a href="{{ page.url ~ '/page' ~ system.param_sep ~ (currentPage - 1) }}">Newer</a>
+						<i class="far fa-hand-point-left"></i> <a href="{{ page.url(true) ~ '/page' ~ system.param_sep ~ (currentPage - 1) }}">Newer</a>
 					</div>
 				{% endif %}
 				{% if (currentPage + 1) <= pagesInCollection %}
