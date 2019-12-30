@@ -1,3 +1,10 @@
+
+# v0.1.6
+## 12/30/2019
+
+1. [](#bugfix)
+    * Include host value when building page navigation (newer) slug. Fixes [#16](https://github.com/ParitoshBh/grav-coder/issues/16)
+
 # v0.1.5
 ## 11/21/2019
 
