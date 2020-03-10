@@ -1,3 +1,8 @@
+# v0.1.7
+## 09/09/2020
+
+1. [](#bugfix)
+    * Attempt fixing navigation on item detail page [#18](https://github.com/ParitoshBh/grav-coder/issues/18). Thanks [@HymieAli](https://github.com/HymieAli).
 
 # v0.1.6
 ## 12/30/2019
