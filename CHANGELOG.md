@@ -1,3 +1,12 @@
+# v0.1.8
+## 12/25/2020
+
+1. [](#new)
+    * Add support for Grav version `1.7.0`.
+    * Add support for loading jquery debugging. Only enabled when debugging is enabled.
+1. [](#bugfix)
+    * Attempt to fix navigation on item detail page. Hopefully this time for good.
+
 # v0.1.7
 ## 09/09/2020
 
