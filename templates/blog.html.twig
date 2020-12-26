@@ -1,14 +1,16 @@
 {% extends 'partials/base.html.twig' %}
 
 {% if uri.param('category') %}
-	{% set page_title = grav.theme.config.blogitemlist.taxonomy.category.title|default('Category: ') ~ uri.param('category') %}
+	{% set page_title = theme_config.listing_title.taxonomy.category | default('Category: ') ~ uri.param('category') %}
 {% elseif uri.param('tag') %}
-	{% set page_title = grav.theme.config.blogitemlist.taxonomy.tag.title|default('Tag: ') ~ uri.param('tag') %}
+	{% set page_title = theme_config.listing_title.taxonomy.tag | default('Tag: ') ~ uri.param('tag') %}
 {% else %}
-	{% set page_title = grav.theme.config.blogitemlist.title|default('Posts') %}
+	{% set page_title = theme_config.listing_title.blog | default('Posts: ') %}
 {% endif %}
 
-{% block title %}{{ page_title }} | {{ parent()  }}{% endblock %}
+{% block title %}
+	{{ page_title }} | {{ parent() }}
+{% endblock %}
 
 {% block body %}
 

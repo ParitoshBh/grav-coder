@@ -8,12 +8,10 @@ footer:
 post:
   navigation: true
   taxonomy: true
-blogitemlist:
-  taxonomy:
-    category:
-      title: 'Category: '
-    tag:
-      title: 'Tag: '
-  title: 'Posts'
+# listing_title:
+#   taxonomy:
+#     category: 'Category: '
+#     tag: 'Tag: '
+#   blogs: 'Posts'
 pagination:
   count: 10
