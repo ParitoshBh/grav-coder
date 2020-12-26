@@ -1,6 +1,5 @@
 {% extends 'partials/base.html.twig' %}
-{% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
-{% set pageCollection = page.parent.children() %}
+
 
 {% block body %}
 <section class="container post">
@@ -37,14 +36,14 @@
         {% if theme_config.post.navigation %}
             <footer class="page-footer">
                 <div>
-                    {% if not pageCollection.isLast(page.path) %}
+                    {% if not page.isLast() %}
                         <div class="float-left">
-                            <i class="far fa-hand-point-left"></i> <a href="{{ pageCollection.prevSibling(page.path).url }}">Previous Article</a>
+                            <i class="far fa-hand-point-left"></i> <a href="{{ page.prevSibling().slug }}">Previous Article</a>
                         </div>
                     {% endif %}
-                    {% if not pageCollection.isFirst(page.path) %}
+                    {% if not page.isFirst() %}
                         <div class="float-right">
-                            <a href="{{ pageCollection.nextSibling(page.path).url }}">Next Article</a> <i class="far fa-hand-point-right"></i>
+                            <a href="{{ page.nextSibling().slug }}">Next Article</a> <i class="far fa-hand-point-right"></i>
                         </div>
                     {% endif %}
                 </div>
