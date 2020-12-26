@@ -7,5 +7,6 @@ footer:
   copyright: Grav Coder
 post:
   navigation: true
+  taxonomy: true
 pagination:
   count: 10
