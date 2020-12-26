@@ -1,11 +1,28 @@
 <ul class="nav navbar-nav navbar-right ">
     {% for page in pages.children.visible %}
-    {% set active_page = (page.active or page.activeChild) ? 'active' : '' %}
+        {% set active_page = (page.active or page.activeChild) ? 'active' : '' %}
         <li>
             <a href="{{ page.url }}" class="{{ active_page }}">
                 {{ page.menu }}
             </a>
         </li>
     {% endfor %}
+
+    {% if theme_config.navbar.auth_link.enabled and config.plugins.login.enabled %}
+        {% if grav.user.authenticated %}
+            <li>
+                <a href="{{ url(uri.addNonce((uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce'))|e }}">
+                    {{ grav.user.fullname ?: grav.user.username }}, Logout
+                </a>
+            </li>        
+        {% else %}
+            {% set active_page = (page.slug == (theme_config.navbar.auth_link.login_slug | default('login'))) ? 'active' : '' %}
+            <li>
+                <a href="/{{ theme_config.navbar.auth_link.login_slug }}" class="{{ active_page }}">
+                    {{ theme_config.navbar.auth_link.login_label | default('Login') }}
+                </a>
+            </li>
+        {% endif %}
+    {% endif %}
 </ul>
 

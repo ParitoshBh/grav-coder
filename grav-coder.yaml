@@ -3,6 +3,10 @@ dropdown:
   enabled: true
 navbar:
   title: Grav Coder
+  auth_link:
+    enabled: false
+    login_slug: login
+    login_label: Login
 footer:
   copyright: Grav Coder
 post:
