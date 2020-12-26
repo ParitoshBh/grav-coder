@@ -5,7 +5,7 @@
 {% elseif uri.param('tag') %}
 	{% set page_title = theme_config.listing_title.taxonomy.tag | default('Tag: ') ~ uri.param('tag') %}
 {% else %}
-	{% set page_title = theme_config.listing_title.blog | default('Posts: ') %}
+	{% set page_title = theme_config.listing_title.blog | default('Posts') %}
 {% endif %}
 
 {% block title %}
