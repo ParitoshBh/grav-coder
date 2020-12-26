@@ -45,21 +45,12 @@
         {% endif %}
 
         {# Show navigation if enabled, defaults to true #}
-        {% if grav.theme.config.post.navigation %}
-            <footer class="page-footer">
-                <div>
-                    {% if not page.isLast() %}
-                        <div class="float-left">
-                            <i class="far fa-hand-point-left"></i> <a href="{{ page.prevSibling().slug }}">Previous Article</a>
-                        </div>
-                    {% endif %}
-                    {% if not page.isFirst() %}
-                        <div class="float-right">
-                            <a href="{{ page.nextSibling().slug }}">Next Article</a> <i class="far fa-hand-point-right"></i>
-                        </div>
-                    {% endif %}
-                </div>
-            </footer>
+        {% if grav.theme.config.post.navigation is defined %}
+            {% if grav.theme.config.post.navigation %}
+                {% include 'partials/item/navigation.html.twig' %}
+            {% endif %}
+        {% else %}
+            {% include 'partials/item/navigation.html.twig' %}
         {% endif %}
 
     </article>

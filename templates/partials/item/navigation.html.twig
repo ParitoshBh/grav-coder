@@ -1,0 +1,14 @@
+<footer class="page-footer">
+    <div>
+        {% if not page.isLast() %}
+            <div class="float-left">
+                <i class="far fa-hand-point-left"></i> <a href="{{ page.prevSibling().slug }}">Previous Article</a>
+            </div>
+        {% endif %}
+        {% if not page.isFirst() %}
+            <div class="float-right">
+                <a href="{{ page.nextSibling().slug }}">Next Article</a> <i class="far fa-hand-point-right"></i>
+            </div>
+        {% endif %}
+    </div>
+</footer>
