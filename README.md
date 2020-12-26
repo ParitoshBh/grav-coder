@@ -118,9 +118,16 @@ There are certain sections of the theme you can customize, in order to do so,
 * Create `grav-coder.yaml` file under `/yoursite/user/config/themes` (this makes sure any configurations made to theme persist when updating the theme)
 * Within `grav-coder.yaml` file following configuration are available,
   ```
-  # Title in navigation bar
   navbar:
+    # Title in navigation bar
     title: Grav Coder
+    # Login link in navbar
+    # Note: Logout link appears automatically if enabled in following format,
+    # <FULL_NAME>, Logout or <USERNAME>, Logout (if full name isn't available)
+    auth_link:
+      enabled: false
+      login_slug: login
+      login_label: Login
 
   # Copyright text visible in footer and (start) year
   # If 'copyright_start_year' is not defined then it isn't shown

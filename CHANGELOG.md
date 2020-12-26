@@ -4,6 +4,8 @@
 1. [](#new)
     * Add support for Grav version `1.7.0`.
     * Add support for loading jquery debugging. Only enabled when debugging is enabled.
+    * Add option to show login/logout link in navbar.
+    * Show tags (below categories) as part of taxonomy. Thanks [@akisys](https://github.com/akisys).
 1. [](#bugfix)
     * Attempt to fix navigation on item detail page. Hopefully this time for good.
 
