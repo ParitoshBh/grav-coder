@@ -68,9 +68,13 @@
     </main>
 
     {% block javascripts %}
+      {% if config.system.debugger.enabled %}
+        {% do assets.addJs('//code.jquery.com/jquery-2.1.3.min.js',100) %}
+      {% else %}
         {% do assets.addJs('theme://js/jquery-slim.min.js', 100) %}
-        {% do assets.addJs('theme://js/bootstrap.min.js', 99) %}
-        {% do assets.addJs('theme://js/main.min.js', 98) %}
+      {% endif %}
+      {% do assets.addJs('theme://js/bootstrap.min.js', 99) %}
+      {% do assets.addJs('theme://js/main.min.js', 98) %}
     {% endblock %}
     {{ assets.js() }}
     
