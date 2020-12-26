@@ -1,5 +1,7 @@
 name: Grav Coder
-version: 0.1.7
+slug: grav-coder
+type: theme
+version: 0.1.8
 description: Grav Coder, theme with minimal clutter and maximum content visibility! Inspired from hugo-coder theme.
 icon: rebel
 author:
@@ -12,6 +14,9 @@ keywords: grav, theme, coder, minimum, clutter, content, visibility, cms, bootst
 bugs: https://github.com/ParitoshBh/grav-coder/issues
 readme: https://github.com/ParitoshBh/grav-coder/blob/master/README.md
 license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
 
 form:
   validation: loose
