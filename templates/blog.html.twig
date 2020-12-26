@@ -1,9 +1,11 @@
 {% extends 'partials/base.html.twig' %}
 
 {% if uri.param('category') %}
+	{% set page_title = grav.theme.config.blogitemlist.taxonomy.category.title|default('Category: ') ~ uri.param('category') %}
 {% elseif uri.param('tag') %}
-	{% set page_title = "Tag: " ~ uri.param('tag') %}
+	{% set page_title = grav.theme.config.blogitemlist.taxonomy.tag.title|default('Tag: ') ~ uri.param('tag') %}
 {% else %}
+	{% set page_title = grav.theme.config.blogitemlist.title|default('Posts') %}
 {% endif %}
 
 {% block title %}{{ page_title }} | {{ parent()  }}{% endblock %}
