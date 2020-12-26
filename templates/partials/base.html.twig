@@ -20,9 +20,9 @@
         {% do assets.addCss('theme://css/style.min.css?v=8', 96) %}
         {% do assets.addCss('theme://css/main.min.css?v=8', 95) %}
         {% do assets.addCss('theme://css/custom.css', 94) %}
-        
     {% endblock %}
-    {{ assets.css() }}
+
+    {{ assets.css() | raw }}
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon-16x16.png') }}" sizes="16x16">
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon-32x32.png') }}" sizes="32x32">
@@ -76,7 +76,8 @@
       {% do assets.addJs('theme://js/bootstrap.min.js', 99) %}
       {% do assets.addJs('theme://js/main.min.js', 98) %}
     {% endblock %}
-    {{ assets.js() }}
+
+    {{ assets.js() | raw }}
     
   </body>
 </html>
