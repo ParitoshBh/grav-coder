@@ -141,18 +141,22 @@ There are certain sections of the theme you can customize, in order to do so,
       title: Github
       url: <url>
       icon: fa-github
+      rel: me (disabled by default, add to activate)
     twitter:
       title: Twitter
       url: <url>
       icon: fa-twitter
+      rel: me (disabled by default, add to activate)
     linkedin:
       title: LinkedIn
       url: <url>
       icon: fa-linkedin-in
+      rel: me (disabled by default, add to activate)
     stackoverflow:
       title: StackOverflow
       url: <url>
       icon: fa-stack-overflow
+      rel: me (disabled by default, add to activate)
 
   # Navigation links (prev/next) on post page (enabled by default)
   # Taxonomy links on post page (enabled by default)
