@@ -1,3 +1,9 @@
+# v0.1.9
+## 09/23/2021
+
+1. [](#new)
+    * Add support for `rel: me`. Thanks [@Habmala](https://github.com/Habmala).
+
 # v0.1.8
 ## 12/25/2020
 
