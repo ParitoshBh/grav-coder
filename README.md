@@ -138,22 +138,22 @@ There are certain sections of the theme you can customize, in order to do so,
     github:
       title: Github
       url: <url>
-      icon: fa-github
+      icon: fab fa-github
       rel: me (disabled by default, add to activate)
     twitter:
       title: Twitter
       url: <url>
-      icon: fa-twitter
+      icon: fab fa-twitter
       rel: me (disabled by default, add to activate)
     linkedin:
       title: LinkedIn
       url: <url>
-      icon: fa-linkedin-in
+      icon: fab fa-linkedin-in
       rel: me (disabled by default, add to activate)
     stackoverflow:
       title: StackOverflow
       url: <url>
-      icon: fa-stack-overflow
+      icon: fab fa-stack-overflow
       rel: me (disabled by default, add to activate)
 
   # Navigation links (prev/next) on post page (enabled by default)
@@ -175,7 +175,7 @@ A couple of pointers for social media icons,
     facebook:
       title: Facebook
       url: <url>
-      icon: fa-facebook-f   
+      icon: fab fa-facebook-f
    ```
 
 # Third Party Libraries Used
