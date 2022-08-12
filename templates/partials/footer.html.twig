@@ -4,7 +4,7 @@
       {% for type, meta in theme_config.social %}
         <li>
           <a href="{{ meta.url }}" {% if meta.rel %}rel="{{ meta.rel }}" {% endif %}class="btn btn-link" title="{{ meta.title }}">
-            <i class="fab {{ meta.icon }}"></i>
+            <i class="{{ meta.icon }}"></i>
           </a>
           {% if loop.last == false %}
             <span class="separator">•</span>
