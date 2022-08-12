@@ -2,7 +2,7 @@
 ## 08/12/2022
 
 1. [](#new)
-    * _BREAKING CHANGE:_ More flexible fontawesome icons for footer. Please update your theme configuration file in accordance with changes mentioned under (Customizations)[https://github.com/ParitoshBh/grav-coder#customizations]. Refer to `icon` value. It now needs `fab` prefix. Thanks [@EpicLPer](https://github.com/EpicLPer).
+    * _BREAKING CHANGE:_ More flexible fontawesome icons for footer. Please update your theme configuration file in accordance with changes mentioned under [Customizations](https://github.com/ParitoshBh/grav-coder#customizations). Refer to `icon` value. It now needs `fab` prefix. Thanks [@EpicLPer](https://github.com/EpicLPer).
 
 # v0.1.9
 ## 09/23/2021
