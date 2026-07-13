@@ -1,3 +1,9 @@
+# v0.1.11
+## 07/05/2026
+
+1. [](#new)
+    * Verify compatibility against Grav `2.0`.
+
 # v0.1.10
 ## 08/12/2022
 
