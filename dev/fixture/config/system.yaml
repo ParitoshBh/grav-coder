@@ -1,0 +1,17 @@
+absolute_urls: false
+home:
+  alias: /home
+pages:
+  theme: grav-coder
+  process:
+    markdown: true
+    twig: false
+cache:
+  enabled: false
+twig:
+  cache: false
+assets:
+  css_pipeline: false
+  js_pipeline: false
+debugger:
+  enabled: true

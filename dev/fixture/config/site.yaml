@@ -1,0 +1,7 @@
+title: Grav Coder Development
+author:
+  name: Paritosh Bhatia
+metadata:
+  description: Local fixture site for developing Grav Coder theme.
+blog:
+  route: /blog
