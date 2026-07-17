@@ -1,6 +1,13 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set configured_color_scheme = theme_config.color_scheme|default('light') %}
+{% if configured_color_scheme not in ['light', 'dark', 'system'] %}
+  {% set configured_color_scheme = 'light' %}
+{% endif %}
+{% set normalized_base_path = '/' ~ uri.rootUrl(false)|default('')|trim('/') %}
 <!DOCTYPE html>
-<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}"
+      data-color-scheme="{{ configured_color_scheme|e('html_attr') }}"
+      data-site-base-path="{{ normalized_base_path|e('html_attr') }}">
 
   <head>
     <meta charset="utf-8">
@@ -18,9 +25,12 @@
         {% do assets.addCss('https://use.fontawesome.com/releases/v5.2.0/css/all.css', 97) %}
         {% do assets.addCss('theme://css/style.min.css?v=8', 96) %}
         {% do assets.addCss('theme://css/main.min.css?v=8', 95) %}
-        {% do assets.addCss('theme://css/custom.css', 94) %}
+        {% do assets.addCss('theme://css/color-scheme.min.css', 94) %}
+        {% do assets.addCss('theme://css/custom.css', 93) %}
+        {% do assets.addJs('theme://js/color-scheme.min.js', {'group': 'color-scheme'}) %}
     {% endblock %}
 
+    {{ assets.js('color-scheme') | raw }}
     {{ assets.css() | raw }}
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon-16x16.png') }}" sizes="16x16">
@@ -38,6 +48,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            <div class="color-scheme-control color-scheme-control-mobile" data-color-scheme-control hidden>
+              {% include 'partials/color-scheme-trigger.html.twig' %}
+            </div>
             <a class="navbar-brand float-left" href="{{ home_url }}">
               {{ theme_config.navbar.title }}
             </a>

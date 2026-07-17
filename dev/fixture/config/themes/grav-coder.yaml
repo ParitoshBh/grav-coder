@@ -1,0 +1,20 @@
+enabled: true
+color_scheme: light
+navbar:
+  title: Grav Coder Dev
+  auth_link:
+    enabled: false
+footer:
+  copyright: Grav Coder
+  copyright_start_year: 2018
+social:
+  github:
+    title: GitHub
+    url: https://github.com/ParitoshBh/grav-coder
+    icon: fab fa-github
+    rel: me
+post:
+  navigation: true
+  taxonomy: true
+pagination:
+  count: 2

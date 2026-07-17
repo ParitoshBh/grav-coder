@@ -1,3 +1,10 @@
+# v0.1.12
+## 07/16/2026
+
+1. [](#new)
+    * Add configurable light, dark, and system color schemes.
+    * Add docker based local development setup.
+
 # v0.1.11
 ## 07/05/2026
 

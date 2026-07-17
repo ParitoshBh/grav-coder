@@ -1,0 +1,14 @@
+services:
+  grav:
+    build:
+      context: dev
+    ports:
+      - "${GRAV_PORT:-8080}:80"
+    environment:
+      GRAV_ENVIRONMENT: development
+    volumes:
+      - grav-data:/var/www/html
+      - .:/opt/grav-coder-theme:ro
+
+volumes:
+  grav-data:

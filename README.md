@@ -57,6 +57,7 @@ Manually updating Grav Coder is pretty simple. Here is what you will need to do 
 * Categories view (listing)
 * Pagination support (defaults to 10 items per page)
 * Taxonomy display support
+* Configurable light, dark, and system color schemes
 
 # Setup
 
@@ -116,6 +117,10 @@ There are certain sections of the theme you can customize, in order to do so,
 * Create `grav-coder.yaml` file under `/yoursite/user/config/themes` (this makes sure any configurations made to theme persist when updating the theme)
 * Within `grav-coder.yaml` file following configuration are available,
   ```
+  # Color scheme: light, dark, or system
+  # Missing or invalid values result in light being used as fallback
+  color_scheme: system
+
   navbar:
     # Title in navigation bar
     title: Grav Coder
@@ -177,6 +182,38 @@ A couple of pointers for social media icons,
       url: <url>
       icon: fab fa-facebook-f
    ```
+
+# Development
+
+A Docker Compose fixture is provided for local theme development. It runs a disposable Grav site with this repository mounted as the active theme, so theme changes are visible on refresh.
+
+Docker with the Compose plugin is required.
+
+```sh
+docker compose up --build
+```
+
+Open <http://localhost:8080>. The fixture covers the home page, blog, taxonomies, post navigation, and pagination. Grav and Twig caching are disabled.
+
+```sh
+# Start in the background
+docker compose up --build -d
+
+# Clear the Grav cache
+docker compose exec grav bin/grav clearcache
+
+# Stop
+docker compose down
+
+# Stop and reset the Grav installation
+docker compose down --volumes
+```
+
+To use a different port, set `GRAV_PORT`:
+
+```sh
+GRAV_PORT=8081 docker compose up --build
+```
 
 # Third Party Libraries Used
 
