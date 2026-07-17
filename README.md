@@ -57,6 +57,7 @@ Manually updating Grav Coder is pretty simple. Here is what you will need to do 
 * Categories view (listing)
 * Pagination support (defaults to 10 items per page)
 * Taxonomy display support
+* Configurable light, dark, and system color schemes
 
 # Setup
 
@@ -116,6 +117,10 @@ There are certain sections of the theme you can customize, in order to do so,
 * Create `grav-coder.yaml` file under `/yoursite/user/config/themes` (this makes sure any configurations made to theme persist when updating the theme)
 * Within `grav-coder.yaml` file following configuration are available,
   ```
+  # Color scheme: light, dark, or system
+  # Missing or invalid values result in light being used as fallback
+  color_scheme: system
+
   navbar:
     # Title in navigation bar
     title: Grav Coder

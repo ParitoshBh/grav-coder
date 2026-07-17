@@ -1,4 +1,5 @@
 enabled: true
+color_scheme: light
 navbar:
   title: Grav Coder Dev
   auth_link:

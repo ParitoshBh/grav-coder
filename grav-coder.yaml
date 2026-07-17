@@ -1,6 +1,7 @@
 enabled: true
 dropdown:
   enabled: true
+color_scheme: light
 navbar:
   title: Grav Coder
   auth_link:
